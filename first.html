@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Youtube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        p{
+            font-family: Roboto, Arial;
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+        .header
+        {
+            height: 55px;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            padding-right: 10px;
+            background-color: white;
+            border: 1px solid rgba(128, 128, 128, 0.159);
+            z-index: 75;
+            
+        }
+        .leftsection{
+            width:150px;
+            display: grid;
+            grid-template-columns: 40px 1fr ;
+            align-items: center;
+            margin-left: 24px;          
+
+        }
+        
+        .rightsection{
+            width:160px;
+            display: grid;
+            grid-template-columns: 25px 25px 25px 25px;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .mychannel{
+            width: 30px;
+            cursor: pointer;
+        }
+        .titleimage{
+            height: 25px;
+            width: 90px;
+            cursor: pointer;
+            
+        }
+        
+        .hamburger{
+            height: 24px;
+            cursor: pointer;
+    
+        }
+        .middlesection{
+            
+            margin-left: 20px;
+           
+            margin-right:35px;
+            max-width:500px;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex:1;
+            column-gap: 0px;
+
+        }
+        .search{
+            flex:1;
+            height: 32px;
+            border-radius: 2px;
+            margin-right: 0px;
+            border: 1px solid rgba(128, 128, 128, 0.25);
+            padding-left: 10px;
+            box-shadow: inset 1px 1px 2px rgba(128, 128, 128, 0.126);
+            width:0;
+        }
+        .search::placeholder{
+            border: none;
+            font-size: 16px;
+        }
+        .searchbutton{
+            height: 35.5px;
+            width:55px;
+            border: 1px solid rgba(128, 128, 128, 0.18);
+            background-color:rgba(128, 128, 128, 0.08); 
+            cursor: pointer;
+        }
+        .voicebutton{
+            margin-left: 10px;
+            width: 40px;
+            height: 36px;
+            border: none;
+            background-color:rgba(128, 128, 128, 0.05); 
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .searchicon{
+            width: 25px;
+            height: 25px;
+
+        }
+        .voiceicon{
+            height: 25px;
+            width: 25px;
+
+        }
+        .thumbnail{
+            width:100%;
+            
+       
+
+        }
+        .thumbnail1{
+            position: relative;
+            
+            margin-bottom: 12px;
+            
+          }
+        .channel-1{
+            width: 40px;
+            border-radius: 50px;
+            
+        }
+        .videotitle
+        {
+            margin-top: 0px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .allinfolayout{
+            display: grid;
+            grid-template-columns: 50px 1fr;
+        }
+        
+        
+        .videoauthor{
+            margin-bottom: 4px;
+            font-size: 12px;
+            color: gray;
+            
+            
+        }
+        .videostats{
+            font-size: 14px;
+            color: gray;
+            
+        }        
+        
+        .videogrid{
+            flex:1;
+            display: grid; 
+            grid-template-columns:1fr 1fr 1fr ; 
+            column-gap:15px; 
+            row-gap:40px;
+        }
+
+        @media (max-width: 750px)
+        {
+            .videogrid{
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+        @media (min-width: 1000px)
+        {
+            .videogrid{
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+
+        }
+        .sidebar{
+            height: 74px;
+            display:grid;
+            grid-template-rows:25px 25px 25px 25px 25px 25px;
+            row-gap: 50px;
+            vertical-align: middle;
+            justify-content:space-around;
+            position: fixed;
+            top:58px;
+            left:0;
+            background-color: white;
+            height: 100%;
+
+
+        }
+        .sidebaricons{
+            padding-top: 15px;
+            width: 23px;
+            height: 23px;
+            display: flex;
+            padding-bottom: 20px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-left: 0px;
+            margin-right: 0;
+            padding-left: 21px;
+            padding-right: 21px;
+            
+        }
+        .sidebaricons:hover{
+            margin-top: 0px;
+            background-color: rgba(128, 128, 128, 0.118);
+            
+        }
+        .sidebariconstext{
+            margin-top: 4px;
+            font-size: 9px;
+            
+            font-family: Roboto;
+            
+            
+        }
+        
+        .body{
+            height: 30000px;
+            padding-top: 60px;
+            padding-left: 70px;
+            background-color: rgba(128, 128, 128, 0.077);
+        }
+        .everythingexceptheader{
+            display: flex;
+            
+
+        }
+        .notificationcount{
+            
+            width: 10px;
+            height: 10px;
+            border-radius: 100px;
+            font-size:xx-small;
+            padding: 0;
+            background-color: red;
+            border: none;
+            position:absolute;
+            top:15px;
+            z-index: 100px;
+            right: 46px;
+            
+        }
+        .notification{
+            
+        }
+        .timestamps{
+            background-color: rgba(0, 0, 0, 0.905);
+            color: white;
+            font-weight: bold;
+            position:absolute;
+            bottom: 8px;
+            right: 5px;
+
+        }
+        
+
+
+    </style>
+  </head>  
+  <body class="body">
+    
+    
+  <div class="header">
+   
+        <div class="leftsection">
+            <div ><img src="hamburger-menu.svg" alt="" class="hamburger"></div>
+            <div><img src="youtube-logo.svg" alt="YouTube" class="titleimage"></div>
+            
+        </div>
+        
+        <div class="middlesection">     
+            <input type="text" class="search" placeholder="Search" >
+            <!-- we can also change the type to checkbox -->
+            <button class="searchbutton"><img src="search.svg" alt="" class="searchicon"></button>
+            <button class="voicebutton"><img src="voice-search-icon (1).svg" alt="" class="voiceicon" ></button>
+            
+        </div>
+
+
+        <div class="rightsection">
+            <img src="upload.svg" alt="">
+            <img src="youtube-apps.svg" alt="">
+            <img src="notifications.svg" alt="" class="notification">
+            <button class="notificationcount">3+</button>
+            <img src="my-channel.jpeg" alt="" class="mychannel">
+        </div>
+    </div>
+    <br>
+    <div class="everythingexceptheader">
+        <div class="videogrid">
+            
+            <div class="one" > 
+                <div class="thumbnail1">
+                    <a href="https://www.youtube.com/watch?v=n2RNcPRtAiY">
+                        <img src="thumbnail-1.webp" alt="" class="thumbnail" >
+                        <button class="timestamps">14:23</button>
+                    </a>
+                   
+                </div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-1.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Talking Tech and AI with Google CEO Sundar Pichai!</p>
+                            <p class="videoauthor">Marques Brownlee </p>
+                            <p class="videostats">3.4M views &CenterDot; 6 months ago</p>
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-2.webp" alt="" class="thumbnail">
+                    <button class="timestamps">6:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-2.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Try Not To Laugh Challenge #9</p>
+                            <p class="videoauthor">Markiplier</p>
+                            <p class="videostats">19M views &CenterDot; 4 years ago</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-3.webp" alt="" class="thumbnail">
+                    <button class="timestamps">8:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-3.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-4.webp" alt="" class="thumbnail">
+                    <button class="timestamps">14:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-4.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-5.webp" alt="" class="thumbnail">
+                    <button class="timestamps">14:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-5.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-6.webp" alt="" class="thumbnail">
+                    <button class="timestamps">14:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-6.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+        
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-7.webp" alt="" class="thumbnail">
+                    <button class="timestamps">14:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-7.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+        
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-8.webp" alt="" class="thumbnail">
+                    <button class="timestamps">14:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-8.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+        
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-9.webp" alt="" class="thumbnail">
+                    <button class="timestamps">14:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-9.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-10.webp" alt="" class="thumbnail">
+                    <button class="timestamps">14:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-10.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-11.webp" alt="" class="thumbnail">
+                    <button class="timestamps">14:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-11.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="one" > 
+                <div class="thumbnail1"><img src="thumbnail-12.webp" alt="" class="thumbnail">
+                    <button class="timestamps">14:23</button></div>
+                <div class="allinfolayout">
+                    <div class="channelpicture"><img src="channel-12.jpeg" alt="" class="channel-1"></div>
+                        <div class="videoinfo">
+                            <p class="videotitle">Crazy Tik Toks Taken Moments before DISASTER</p>
+                            <p class="videoauthor">SSSniperWolf</p>
+                            <p class="videostats">12M views &CenterDot; 1 year ago</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebaricons">
+                <img src="home.svg" alt="">
+                <div class="sidebariconstext">Home</div>
+            </div>
+            <div class="sidebaricons">
+                <img src="explore.svg" alt="">
+                <div class="sidebariconstext">Explore</div>
+                
+            </div>
+            <div class="sidebaricons">
+                <img src="subscriptions.svg" alt="" >
+                <div class="sidebariconstext">Subscriptions</div>
+            </div>
+            <div class="sidebaricons">
+                <img src="originals.svg" alt="" >
+                <div class="sidebariconstext">Originals</div>
+            </div>
+            <div class="sidebaricons">
+                <img src="youtube-music.svg" alt="" >
+                <div class="sidebariconstext">YouTube Music</div>
+            </div>
+            <div class="sidebaricons">
+                <img src="library.svg" alt="" >
+                <div class="sidebariconstext">Library</div>
+            </div>
+
+        </div>
+    </div>
+    
+
+    
+
+
+  </body>
+</html>
